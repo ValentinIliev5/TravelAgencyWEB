@@ -1,6 +1,5 @@
 package fmi.pu.services.implementations;
 
-import fmi.pu.models.DTOs.LocationDTO;
 import fmi.pu.models.Location;
 import fmi.pu.repos.LocationRepository;
 import fmi.pu.services.LocationService;

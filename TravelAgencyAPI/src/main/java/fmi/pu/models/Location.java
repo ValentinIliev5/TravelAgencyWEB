@@ -1,8 +1,16 @@
 package fmi.pu.models;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name="location")
 public class Location {
     @Id
@@ -12,9 +20,6 @@ public class Location {
     private int number;
     private String city;
     private String country;
-
-    public Location() {
-    }
 
     public Location(String street, int number, String city, String country) {
         this.street = street;

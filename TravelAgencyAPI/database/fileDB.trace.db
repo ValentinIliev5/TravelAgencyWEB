@@ -1138,3 +1138,7 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: N:/WebServerPU/T
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-206]
 2024-01-07 20:53:46 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-206]
+2024-01-07 22:16:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-206]
+2024-01-07 22:18:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-206]

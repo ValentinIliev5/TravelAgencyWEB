@@ -2,7 +2,6 @@ package fmi.pu.controllers;
 
 import fmi.pu.models.Location;
 import fmi.pu.services.LocationService;
-import org.springframework.data.relational.core.sql.In;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
