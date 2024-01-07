@@ -22,11 +22,12 @@ public class HolidayController {
     }
 
     @PostMapping("")
-    public ResponseEntity<Holiday> createHoliday(@RequestBody HolidayDTO holiday){
+    public ResponseEntity<Holiday> createHoliday(@RequestBody HolidayDTO holiday) {
         return ResponseEntity.ok(holidayService.createHoliday(holiday));
     }
+
     @GetMapping("{id}")
-    public ResponseEntity<Holiday> getHolidayById(@PathVariable Integer id){
+    public ResponseEntity<Holiday> getHolidayById(@PathVariable Integer id) {
         return ResponseEntity.ok(holidayService.findHolidayById(id));
     }
 
@@ -36,17 +37,17 @@ public class HolidayController {
             @RequestParam(required = false) LocalDate startDate,
             @RequestParam(required = false) Integer duration) {
         return ResponseEntity.ok(holidayService
-                .findHolidayByLocationDateDuration(location,startDate,duration));
+                .findHolidayByLocationDateDuration(location, startDate, duration));
     }
+
     @PutMapping("")
-    public ResponseEntity<Holiday> editHoliday(@RequestBody HolidayDTO holiday)
-    {
-        return ResponseEntity.ok(holidayService.editHoliday(holiday.getId(),holiday));
+    public ResponseEntity<Holiday> editHoliday(@RequestBody HolidayDTO holiday) {
+        return ResponseEntity.ok(holidayService.editHoliday(holiday.getId(), holiday));
     }
+
     @DeleteMapping("id")
     @ResponseStatus(value = HttpStatus.OK)
-    public void deleteHoliday(@PathVariable Integer id)
-    {
+    public void deleteHoliday(@PathVariable Integer id) {
         holidayService.deleteHoliday(id);
     }
 }

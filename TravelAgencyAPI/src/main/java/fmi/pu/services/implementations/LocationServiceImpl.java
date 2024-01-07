@@ -16,18 +16,13 @@ public class LocationServiceImpl implements LocationService {
         this.locationRepository = locationRepository;
     }
 
-    public Location createLocation(String street, int number,String city,String country)
-    {
-        return locationRepository.save(new Location(street,number,city,country));
-    }
-    @Override
-    public Location findLocationByStreet(String locationStreet) {
-        return locationRepository.findByStreet(locationStreet).orElse(null);
+    public Location createLocation(String street, int number, String city, String country) {
+        return locationRepository.save(new Location(street, number, city, country));
     }
 
     @Override
     public Location findLocationEntityById(int id) {
-       return locationRepository.findById(id).orElse(null);
+        return locationRepository.findById(id).orElse(null);
     }
 
     @Override
@@ -50,6 +45,6 @@ public class LocationServiceImpl implements LocationService {
 
     @Override
     public void deleteLocation(int locationId) {
-       locationRepository.deleteById(locationId);
+        locationRepository.deleteById(locationId);
     }
 }

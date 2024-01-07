@@ -20,28 +20,29 @@ public class LocationController {
     }
 
     @PostMapping("")
-    public ResponseEntity<Object> createLocation(@RequestBody Location location){
-        Location respLocation = locationService.createLocation(location.getStreet(),location.getNumber(),location.getCity(),location.getCountry());
-        return new ResponseEntity<>( respLocation,HttpStatus.OK);
+    public ResponseEntity<Object> createLocation(@RequestBody Location location) {
+        Location respLocation = locationService.createLocation(location.getStreet(), location.getNumber(), location.getCity(), location.getCountry());
+        return new ResponseEntity<>(respLocation, HttpStatus.OK);
     }
+
     @GetMapping("{id}")
-    public ResponseEntity<Location> getLocationById(@PathVariable Integer id){
-        return new ResponseEntity<>(locationService.findLocationEntityById(id),HttpStatus.OK);
+    public ResponseEntity<Location> getLocationById(@PathVariable Integer id) {
+        return new ResponseEntity<>(locationService.findLocationEntityById(id), HttpStatus.OK);
     }
+
     @GetMapping("")
-    public ResponseEntity<List<Location>> getAllLocations(){
-        return new ResponseEntity<>(locationService.findAllLocations(),HttpStatus.OK);
+    public ResponseEntity<List<Location>> getAllLocations() {
+        return new ResponseEntity<>(locationService.findAllLocations(), HttpStatus.OK);
     }
 
     @PutMapping("")
-    public ResponseEntity<Location> editLocation(@RequestBody Location location)
-    {
-        return new ResponseEntity<>(locationService.updateLocation(location.getId(),location),HttpStatus.OK);
+    public ResponseEntity<Location> editLocation(@RequestBody Location location) {
+        return new ResponseEntity<>(locationService.updateLocation(location.getId(), location), HttpStatus.OK);
     }
+
     @DeleteMapping("{id}")
-    @ResponseStatus(value=HttpStatus.OK)
-    public void deleteLocation(@PathVariable Integer id)
-    {
+    @ResponseStatus(value = HttpStatus.OK)
+    public void deleteLocation(@PathVariable Integer id) {
         locationService.deleteLocation(id);
     }
 }
